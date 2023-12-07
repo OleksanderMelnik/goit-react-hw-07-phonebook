@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContactThunk } from 'redux/operations/contactsThunk';
+import { deleteContactThunk } from 'redux/contactsThunk';
 import { List, Item, Button } from './ContctsList.style';
 import { getFilteredContacts } from 'redux/selectors';
 

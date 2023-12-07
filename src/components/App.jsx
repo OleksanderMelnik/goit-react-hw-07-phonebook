@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getContactsThunk } from 'redux/operations/contactsThunk';
+import { getContactsThunk } from 'redux/contactsThunk';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
