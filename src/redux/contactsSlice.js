@@ -3,7 +3,7 @@ import {
   addContactThunk,
   deleteContactThunk,
   getContactsThunk,
-} from './operations/contactsThunk.js';
+} from 'redux/operations/contactsThunk';
 
 const contactsInitialState = { items: [], error: null, isLoading: false };
 
