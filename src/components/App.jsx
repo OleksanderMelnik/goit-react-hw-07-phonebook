@@ -14,8 +14,6 @@ export const App = () => {
     dispatch(getContactsThunk());
   }, [dispatch]);
 
-  const users = useSelector(selectContacts);
-  
   return (
     <Div>
       <Title>Phonebook</Title>
