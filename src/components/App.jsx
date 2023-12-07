@@ -4,7 +4,7 @@ import { getContactsThunk } from 'redux/operations/contactsThunk';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
-// import { Div, Title, TitleContact } from './App.styled';
+import { Div, Title, TitleContact } from './App.styled';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -14,12 +14,12 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <Div>
+      <Title>Phonebook</Title>
       <ContactForm />
-      <h2>Contacts</h2>
+      <TitleContact>Contacts</TitleContact>
       <Filter />
       <ContactList />
-    </div>
+    </Div>
   );
 };
