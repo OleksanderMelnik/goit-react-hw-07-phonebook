@@ -1,30 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
-import { deletContact } from 'redux/contactsSlice';
+import { deleteContactThunk } from 'redux/operations/contactsThunk';
 import { List, Item, Button } from './ContctsList.style';
+import { getFilteredContacts } from 'redux/selectors/selectors';
 
 export const ContactList = () => {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
+  
   const dispatch = useDispatch();
-
-  const filterContacts = contacts?.filter(contact =>
-    contact?.name?.toLowerCase().includes(filter.toLowerCase())
-  );
-
-  const deleteContact = id => {
-    dispatch(deletContact(id));
-  };
+  const contacts = useSelector(getFilteredContacts);
 
   return (
     <List>
-      {filterContacts.map(({ id, name, number }) => (
-        <Item key={id}>
-          <b>{name}: </b>
-          <b>{number}</b>
+      {contacts.map( item => (
+        <Item key={item.id}>
+          <b>{item.name}: </b>
+          <b>{item.number}</b>
           <Button
             type="button"
-            onClick={() => deleteContact(id)}
+            onClick={() => dispatch(deleteContactThunk(item.id))}
           >
             delete
           </Button>
