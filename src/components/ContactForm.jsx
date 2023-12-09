@@ -15,7 +15,6 @@ export const ContactForm = () => {
       number: event.target.elements.number.value,
     };
  
-
     dispatch(addContactThunk(newObj));
     event.target.reset();
     
